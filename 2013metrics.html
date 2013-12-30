@@ -1,0 +1,698 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/cosmo/bootstrap.min.css">
+     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" >
+    <link rel='stylesheet' href="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css">
+    <link rel='stylesheet' href="http://aozora.github.io/bootplus/assets/css/docs.css">
+    <link rel='stylesheet' href='/css/nv.d3.css'>
+    <link rel='stylesheet' href='/css/rNVD3.css'>
+    
+    <script src='/js/jquery-1.8.2.min.js' type='text/javascript'></script>
+    <script src='/js/d3.v3.min.js' type='text/javascript'></script>
+    <script src='/js/nv.d3.min-new.js' type='text/javascript'></script>
+    <script src='/js/fisheye.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block
+      margin: auto auto;
+      width: 100%;
+      height: 450px;
+    }
+    .bs-docs-example:after {
+      content: "";
+      background: transparent;
+      border: none;
+    }
+
+	svg text {
+		font-size: 11px;
+	}
+
+    </style>
+    
+  </head>
+  <body ng-app>
+      <h1>Bizjournals 2013 Metrics by Market</h1>
+    <div class='container' ng-controller="DemoCtrl">
+  <div class='row'>
+    <div class='span3'>
+      <form class='well'>
+        <label><b>Select  Metric to view :</b></label>
+    		<select ng-model="opts.y" 
+          ng-options="ctl for ctl in controls.y.values">   
+    		</select><br>
+      </form>
+    </div>
+    <div class='span8'>
+      <div class="bs-docs-example">
+        <div id='chart4933d09d84d' class='rChart '>
+          <svg></svg>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function DemoCtrl($scope){
+  $scope.opts = {
+ "dom": "chart4933d09d84d",
+"width":    700,
+"height":    400,
+"x": "Market",
+"y": "PV",
+"type": "discreteBarChart",
+"id": "chart4933d09d84d" 
+}
+  $scope.data = [
+ {
+ "Market": "Albany",
+"PV": 6995748,
+"Uniques": 1777516,
+"Visits": 2415292,
+"Web.Only.PV": 6144790,
+"Slideshows": 1385997,
+"Mobile.Web": 710618,
+"iOS.PV": 121789,
+"Story.Count": 3830,
+"Google.PV": 1249968,
+"DU.PV": 1172955 
+},
+{
+ "Market": "Albuquerque",
+"PV": 4133841,
+"Uniques": 1241194,
+"Visits": 1994523,
+"Web.Only.PV": 3585674,
+"Slideshows": 832738,
+"Mobile.Web": 484814,
+"iOS.PV": 51909,
+"Story.Count": 4234,
+"Google.PV": 906507,
+"DU.PV": 836577 
+},
+{
+ "Market": "Atlanta",
+"PV": 18495396,
+"Uniques": 4460288,
+"Visits": 6231534,
+"Web.Only.PV": 15888337,
+"Slideshows": 4477197,
+"Mobile.Web": 1961156,
+"iOS.PV": 742920,
+"Story.Count": 6873,
+"Google.PV": 3171464,
+"DU.PV": 3360117 
+},
+{
+ "Market": "Austin",
+"PV": 11662829,
+"Uniques": 2791128,
+"Visits": 3853661,
+"Web.Only.PV": 9924280,
+"Slideshows": 2756665,
+"Mobile.Web": 1311557,
+"iOS.PV": 392309,
+"Story.Count": 4904,
+"Google.PV": 2454057,
+"DU.PV": 1813590 
+},
+{
+ "Market": "Baltimore",
+"PV": 9447847,
+"Uniques": 2493891,
+"Visits": 3527050,
+"Web.Only.PV": 8196082,
+"Slideshows": 2124224,
+"Mobile.Web": 970700,
+"iOS.PV": 252493,
+"Story.Count": 6072,
+"Google.PV": 1805825,
+"DU.PV": 1527993 
+},
+{
+ "Market": "Birmingham",
+"PV": 6310808,
+"Uniques": 1300917,
+"Visits": 1768873,
+"Web.Only.PV": 5436184,
+"Slideshows": 1696229,
+"Mobile.Web": 658782,
+"iOS.PV": 202024,
+"Story.Count": 4444,
+"Google.PV": 1154170,
+"DU.PV": 1152636 
+},
+{
+ "Market": "Boston",
+"PV": 18759181,
+"Uniques": 5290336,
+"Visits": 5556989,
+"Web.Only.PV": 16638332,
+"Slideshows": 3676105,
+"Mobile.Web": 1853108,
+"iOS.PV": 239411,
+"Story.Count": 7484,
+"Google.PV": 4027613,
+"DU.PV": 2092331 
+},
+{
+ "Market": "Buffalo",
+"PV": 12057546,
+"Uniques": 1654179,
+"Visits": 2588865,
+"Web.Only.PV": 11051602,
+"Slideshows": 5598665,
+"Mobile.Web": 767664,
+"iOS.PV": 204471,
+"Story.Count": 5124,
+"Google.PV": 1812054,
+"DU.PV": 1548999 
+},
+{
+ "Market": "Charlotte",
+"PV": 9947051,
+"Uniques": 2718879,
+"Visits": 3697342,
+"Web.Only.PV": 8424010,
+"Slideshows": 1235660,
+"Mobile.Web": 1116170,
+"iOS.PV": 358141,
+"Story.Count": 6029,
+"Google.PV": 2008915,
+"DU.PV": 1379210 
+},
+{
+ "Market": "Chicago",
+"PV": 1882204,
+"Uniques": 1032931,
+"Visits": 359955,
+"Web.Only.PV": 1540995,
+"Slideshows": 129843,
+"Mobile.Web": 318182,
+"iOS.PV": 20557,
+"Story.Count": 2714,
+"Google.PV": 516706,
+"DU.PV": 121468 
+},
+{
+ "Market": "Cincinnati",
+"PV": 12110847,
+"Uniques": 2854070,
+"Visits": 3783284,
+"Web.Only.PV": 10396985,
+"Slideshows": 3121475,
+"Mobile.Web": 1324984,
+"iOS.PV": 351865,
+"Story.Count": 5210,
+"Google.PV": 2202293,
+"DU.PV": 2003108 
+},
+{
+ "Market": "Columbus",
+"PV": 9821219,
+"Uniques": 2428268,
+"Visits": 3197148,
+"Web.Only.PV": 8663161,
+"Slideshows": 2272880,
+"Mobile.Web": 918583,
+"iOS.PV": 222205,
+"Story.Count": 4477,
+"Google.PV": 2350879,
+"DU.PV": 1343503 
+},
+{
+ "Market": "Dallas",
+"PV": 11825551,
+"Uniques": 3228978,
+"Visits": 4827556,
+"Web.Only.PV": 10158158,
+"Slideshows": 2334935,
+"Mobile.Web": 1258245,
+"iOS.PV": 374320,
+"Story.Count": 5546,
+"Google.PV": 2265397,
+"DU.PV": 1849930 
+},
+{
+ "Market": "Dayton",
+"PV": 8108644,
+"Uniques": 1370570,
+"Visits": 2253665,
+"Web.Only.PV": 7436454,
+"Slideshows": 4455253,
+"Mobile.Web": 591974,
+"iOS.PV": 70992,
+"Story.Count": 3850,
+"Google.PV": 1977924,
+"DU.PV": 1002290 
+},
+{
+ "Market": "Denver",
+"PV": 10402509,
+"Uniques": 3304174,
+"Visits": 4981495,
+"Web.Only.PV": 8960396,
+"Slideshows": 1149783,
+"Mobile.Web": 1148391,
+"iOS.PV": 259741,
+"Story.Count": 5561,
+"Google.PV": 2131866,
+"DU.PV": 1468009 
+},
+{
+ "Market": "Greensboro",
+"PV": 4197510,
+"Uniques": 1263369,
+"Visits": 1797895,
+"Web.Only.PV": 3646238,
+"Slideshows": 490426,
+"Mobile.Web": 444645,
+"iOS.PV": 98941,
+"Story.Count": 4638,
+"Google.PV": 840725,
+"DU.PV": 746690 
+},
+{
+ "Market": "Hawaii",
+"PV": 8394651,
+"Uniques": 2123695,
+"Visits": 3014349,
+"Web.Only.PV": 7155836,
+"Slideshows": 1147998,
+"Mobile.Web": 1025525,
+"iOS.PV": 186098,
+"Story.Count": 4404,
+"Google.PV": 1700976,
+"DU.PV": 1655792 
+},
+{
+ "Market": "Houston",
+"PV": 14411406,
+"Uniques": 3609330,
+"Visits": 4790363,
+"Web.Only.PV": 12631820,
+"Slideshows": 3639788,
+"Mobile.Web": 1372903,
+"iOS.PV": 354957,
+"Story.Count": 5657,
+"Google.PV": 3043201,
+"DU.PV": 1734458 
+},
+{
+ "Market": "Jacksonville",
+"PV": 5774064,
+"Uniques": 1620271,
+"Visits": 2120118,
+"Web.Only.PV": 4886379,
+"Slideshows": 1160290,
+"Mobile.Web": 678196,
+"iOS.PV": 185347,
+"Story.Count": 4605,
+"Google.PV": 1234691,
+"DU.PV": 933324 
+},
+{
+ "Market": "Kansas City",
+"PV": 11875321,
+"Uniques": 2825093,
+"Visits": 4976336,
+"Web.Only.PV": 10229987,
+"Slideshows": 1945861,
+"Mobile.Web": 1230693,
+"iOS.PV": 362293,
+"Story.Count": 5603,
+"Google.PV": 2358336,
+"DU.PV": 2187352 
+},
+{
+ "Market": "Los Angeles",
+"PV": 1237515,
+"Uniques": 746490,
+"Visits": 694590,
+"Web.Only.PV": 1006279,
+"Slideshows": 37589,
+"Mobile.Web": 216597,
+"iOS.PV": 12877,
+"Story.Count": 2330,
+"Google.PV": 297455,
+"DU.PV": 107210 
+},
+{
+ "Market": "Louisville",
+"PV": 6928100,
+"Uniques": 1832628,
+"Visits": 2757525,
+"Web.Only.PV": 5873492,
+"Slideshows": 1439529,
+"Mobile.Web": 816816,
+"iOS.PV": 221638,
+"Story.Count": 5892,
+"Google.PV": 1557319,
+"DU.PV": 1147003 
+},
+{
+ "Market": "Memphis",
+"PV": 5202579,
+"Uniques": 1650893,
+"Visits": 2249217,
+"Web.Only.PV": 4284579,
+"Slideshows": 780368,
+"Mobile.Web": 726411,
+"iOS.PV": 174803,
+"Story.Count": 4390,
+"Google.PV": 1162852,
+"DU.PV": 737308 
+},
+{
+ "Market": "Milwaukee",
+"PV": 10674009,
+"Uniques": 2364030,
+"Visits": 3127261,
+"Web.Only.PV": 9497902,
+"Slideshows": 3460119,
+"Mobile.Web": 852789,
+"iOS.PV": 284530,
+"Story.Count": 6553,
+"Google.PV": 1951587,
+"DU.PV": 1643221 
+},
+{
+ "Market": "Minneapolis",
+"PV": 13247970,
+"Uniques": 3507629,
+"Visits": 5637950,
+"Web.Only.PV": 11224788,
+"Slideshows": 2299071,
+"Mobile.Web": 1589952,
+"iOS.PV": 404319,
+"Story.Count": 5451,
+"Google.PV": 2506781,
+"DU.PV": 2462931 
+},
+{
+ "Market": "Nashville",
+"PV": 8515629,
+"Uniques": 1920041,
+"Visits": 2918441,
+"Web.Only.PV": 7066663,
+"Slideshows": 1698833,
+"Mobile.Web": 1053793,
+"iOS.PV": 369422,
+"Story.Count": 4839,
+"Google.PV": 1688463,
+"DU.PV": 1358960 
+},
+{
+ "Market": "New York",
+"PV": 1045852,
+"Uniques": 623867,
+"Visits": 187795,
+"Web.Only.PV": 864139,
+"Slideshows": 41116,
+"Mobile.Web": 989403,
+"iOS.PV": 14423,
+"Story.Count": 2767,
+"Google.PV": 292360,
+"DU.PV": 96017 
+},
+{
+ "Market": "Orlando",
+"PV": 8294439,
+"Uniques": 2063126,
+"Visits": 2644748,
+"Web.Only.PV": 7116685,
+"Slideshows": 2393417,
+"Mobile.Web": 166891,
+"iOS.PV": 228134,
+"Story.Count": 6007,
+"Google.PV": 1809564,
+"DU.PV": 1253329 
+},
+{
+ "Market": "Philadelphia",
+"PV": 11326369,
+"Uniques": 2533654,
+"Visits": 3601458,
+"Web.Only.PV": 10273708,
+"Slideshows": 4086255,
+"Mobile.Web": 910403,
+"iOS.PV": 149024,
+"Story.Count": 5425,
+"Google.PV": 2115443,
+"DU.PV": 2057088 
+},
+{
+ "Market": "Phoenix",
+"PV": 14206262,
+"Uniques": 3512717,
+"Visits": 4568584,
+"Web.Only.PV": 12514735,
+"Slideshows": 4464231,
+"Mobile.Web": 891390,
+"iOS.PV": 235292,
+"Story.Count": 6412,
+"Google.PV": 2895366,
+"DU.PV": 2692872 
+},
+{
+ "Market": "Pittsburgh",
+"PV": 11000585,
+"Uniques": 2673750,
+"Visits": 3808531,
+"Web.Only.PV": 9840599,
+"Slideshows": 3650661,
+"Mobile.Web": 1427469,
+"iOS.PV": 147295,
+"Story.Count": 6144,
+"Google.PV": 2238271,
+"DU.PV": 1752271 
+},
+{
+ "Market": "Portland",
+"PV": 10391882,
+"Uniques": 2137348,
+"Visits": 3862608,
+"Web.Only.PV": 9395610,
+"Slideshows": 3682871,
+"Mobile.Web": 991645,
+"iOS.PV": 151411,
+"Story.Count": 5183,
+"Google.PV": 1857564,
+"DU.PV": 1967388 
+},
+{
+ "Market": "Raleigh",
+"PV": 11263527,
+"Uniques": 2659887,
+"Visits": 3813215,
+"Web.Only.PV": 9922478,
+"Slideshows": 3196643,
+"Mobile.Web": 830426,
+"iOS.PV": 202976,
+"Story.Count": 6774,
+"Google.PV": 2165356,
+"DU.PV": 2140059 
+},
+{
+ "Market": "Sacramento",
+"PV": 7375933,
+"Uniques": 2122146,
+"Visits": 2737547,
+"Web.Only.PV": 6384089,
+"Slideshows": 1902857,
+"Mobile.Web": 1110894,
+"iOS.PV": 143803,
+"Story.Count": 5097,
+"Google.PV": 1889334,
+"DU.PV": 976752 
+},
+{
+ "Market": "San Antonio",
+"PV": 5172457,
+"Uniques": 1801578,
+"Visits": 2014068,
+"Web.Only.PV": 4334334,
+"Slideshows": 854844,
+"Mobile.Web": 824288,
+"iOS.PV": 153309,
+"Story.Count": 5408,
+"Google.PV": 1248982,
+"DU.PV": 662290 
+},
+{
+ "Market": "San Francisco",
+"PV": 14460532,
+"Uniques": 3920099,
+"Visits": 5439880,
+"Web.Only.PV": 12953077,
+"Slideshows": 4767153,
+"Mobile.Web": 669596,
+"iOS.PV": 135506,
+"Story.Count": 6442,
+"Google.PV": 3980443,
+"DU.PV": 1605361 
+},
+{
+ "Market": "San Jose",
+"PV": 11231219,
+"Uniques": 3908670,
+"Visits": 4849353,
+"Web.Only.PV": 9712959,
+"Slideshows": 2358293,
+"Mobile.Web": 1351424,
+"iOS.PV": 98732,
+"Story.Count": 6275,
+"Google.PV": 2416193,
+"DU.PV": 1127439 
+},
+{
+ "Market": "Seattle",
+"PV": 12983853,
+"Uniques": 3728554,
+"Visits": 4780588,
+"Web.Only.PV": 11378093,
+"Slideshows": 1652952,
+"Mobile.Web": 1389797,
+"iOS.PV": 251567,
+"Story.Count": 5135,
+"Google.PV": 2400433,
+"DU.PV": 1688000 
+},
+{
+ "Market": "South Florida",
+"PV": 11490831,
+"Uniques": 2993536,
+"Visits": 4216659,
+"Web.Only.PV": 9911745,
+"Slideshows": 2336378,
+"Mobile.Web": 1336266,
+"iOS.PV": 317223,
+"Story.Count": 5684,
+"Google.PV": 2572858,
+"DU.PV": 1413060 
+},
+{
+ "Market": "St Louis",
+"PV": 13479464,
+"Uniques": 3346189,
+"Visits": 5470715,
+"Web.Only.PV": 11150531,
+"Slideshows": 1538523,
+"Mobile.Web": 1234426,
+"iOS.PV": 687179,
+"Story.Count": 7345,
+"Google.PV": 2819093,
+"DU.PV": 2202800 
+},
+{
+ "Market": "Tampa Bay",
+"PV": 8128884,
+"Uniques": 2055381,
+"Visits": 2687093,
+"Web.Only.PV": 7083664,
+"Slideshows": 1766400,
+"Mobile.Web": 1567150,
+"iOS.PV": 207294,
+"Story.Count": 5781,
+"Google.PV": 1608789,
+"DU.PV": 1345889 
+},
+{
+ "Market": "Washington",
+"PV": 17214253,
+"Uniques": 4549825,
+"Visits": 5834047,
+"Web.Only.PV": 15529105,
+"Slideshows": 4341827,
+"Mobile.Web": 810759,
+"iOS.PV": 229029,
+"Story.Count": 13431,
+"Google.PV": 3528677,
+"DU.PV": 2015564 
+},
+{
+ "Market": "Wichita",
+"PV": 5365280,
+"Uniques": 1380281,
+"Visits": 1991885,
+"Web.Only.PV": 4639396,
+"Slideshows": 1021556,
+"Mobile.Web": 1429179,
+"iOS.PV": 134615,
+"Story.Count": 5974,
+"Google.PV": 910777,
+"DU.PV": 998093 
+} 
+]
+  $scope.controls = {
+ "y": {
+ "name": "y",
+"value": "PV",
+"values": [ "PV", "Uniques", "Visits", "Web.Only.PV", "Slideshows", "Mobile.Web", "iOS.PV", "Story.Count", "Google.PV", "DU.PV" ],
+"label": "Select  y :" 
+} 
+}           
+  $scope.drawChart = function(){
+    drawChart($scope.opts, $scope.data)  
+  }
+  $scope.$watch('opts',function(){
+    $scope.drawChart()
+	}, true)
+}  
+
+function drawChart(opts, data){  
+	var data = d3.nest()
+		.key(function(d){
+			return opts.group === undefined ? 'main' : d[opts.group]
+		})
+		.entries(data)
+	
+	nv.addGraph(function() {
+		var chart = nv.models[opts.type]()
+			.x(function(d) { return d[opts.x] })
+			.y(function(d) { return d[opts.y] })
+			.width(opts.width)
+			.height(opts.height)
+		
+	
+          
+	chart.xAxis
+  .rotateLabels(   -90)
+
+	
+	
+	chart.yAxis
+  .axisLabel("y")
+  .width(   100)
+  .tickFormat(d3.format(',.0f'));
+
+	d3.select("#" + opts.id + ' svg')
+		.datum(data)
+		.transition().duration(500)
+		.call(chart);
+	
+	 nv.utils.windowResize(chart.update);
+	 return chart;
+  });
+};
+</script>
+    
+  </body>
+  <!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script 
+    src='https://google-code-prettify.googlecode.com/svn-history/r232/trunk/src/lang-r.js'>
+  </script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint linenums";
+    }
+    prettyPrint();
+  </script>
+</html>
